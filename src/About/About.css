@@ -1,0 +1,250 @@
+/* About.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.about-page {
+  padding: 0;
+  margin: 0;
+}
+
+/* Banner Section */
+.about-banner {
+  background-image: url('https://your-banner-image-url.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.banner-overlay h1 {
+  font-size: 80px;
+  margin: 5;
+}
+
+.banner-overlay p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* About Sections */
+.about-section, .team-section, .timeline-section, .community-section {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section h2, .team-section h2, .timeline-section h2, .community-section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.about-section .mission-vision {
+  margin-bottom: 40px;
+}
+
+.about-section .mission-vision h2 {
+  font-size: 28px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.about-section .mission-vision p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Team Section */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.team-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-info h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.team-info .role {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.team-info .bio {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Timeline Section */
+.timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #e0e0e0;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white;
+}
+
+.timeline-item:nth-child(odd)::after {
+  right: -10px;
+}
+
+.timeline-item:nth-child(even)::after {
+  left: -10px;
+}
+
+.timeline-year {
+  font-size: 18px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.timeline-event {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item:nth-child(odd) .timeline-event {
+  margin-left: 20px;
+}
+
+.timeline-item:nth-child(even) .timeline-event {
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0;
+    padding-left: 60px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-item::after {
+    left: 10px;
+  }
+
+  .timeline-item:nth-child(even)::after {
+    left: 10px;
+  }
+}
+
+/* Community Section */
+.community-section p {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: #555;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #4CAF50;
+}

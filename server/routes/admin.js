@@ -34,7 +34,7 @@ router.get('/users', authAdmin, async (req, res) => {
   try {
     const users = await User.find().select('-password');
     res.json(users);
-  } catch (err) {
+  } catch (err) {// its a test
     console.error(err);
     res.status(500).json({ message: 'Server Error' });
   }

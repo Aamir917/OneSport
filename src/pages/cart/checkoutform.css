@@ -1,0 +1,95 @@
+.checkout-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.checkout-card {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 500px;
+}
+
+.checkout-card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.checkout-total {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #555;
+}
+
+.checkout-form .form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.checkout-form .form-group input,
+.checkout-form .form-group textarea {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.checkout-form .form-group input:focus,
+.checkout-form .form-group textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+.checkout-form .form-group label {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  font-size: 16px;
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.checkout-form .form-group.filled label,
+.checkout-form .form-group input:focus + label,
+.checkout-form .form-group textarea:focus + label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  color: #007bff;
+  background: #fff;
+  padding: 0 4px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.place-order-btn:hover {
+  background: #0056b3;
+}

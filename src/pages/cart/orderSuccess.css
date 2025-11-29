@@ -1,0 +1,80 @@
+.order-success-page {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.success-container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.receipt-card {
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.receipt-card h2 {
+  text-align: center;
+  color: #2874f0;
+}
+
+.shipping-info, .order-summary {
+  margin-top: 20px;
+}
+
+.order-summary table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-summary th, .order-summary td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.order-summary th {
+  background-color: #f0f0f0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.print-btn, .back-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.print-btn {
+  background-color: #2874f0;
+  color: white;
+}
+
+.print-btn:hover {
+  background-color: #135ee6;
+}
+
+.back-btn {
+  background-color: #111;
+  color: white;
+}
+
+.back-btn:hover {
+  background-color: #333;
+}

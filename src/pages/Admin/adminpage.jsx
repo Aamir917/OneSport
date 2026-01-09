@@ -442,7 +442,7 @@ const AdminPage = () => {
                         {p.brand && <span> • {p.brand}</span>}
                       </p>
                       <p className="admin-product-price">
-                        ₹{p.price} · Stock: {p.stock}
+                        ${p.price} · Stock: {p.stock}
                       </p>
                       <div className="admin-product-actions">
                         <button
@@ -569,7 +569,7 @@ const AdminPage = () => {
                             <strong>Placed:</strong> {dateStr}
                           </p>
                           <p className="order-total">
-                            <strong>Total:</strong> ₹
+                            <strong>Total:</strong> $
                             {(order.totalPrice || 0).toFixed(2)}
                           </p>
                         </div>
@@ -661,7 +661,7 @@ const AdminPage = () => {
                                     {item.product?.name || "Product"}
                                   </p>
                                   <p className="order-item-sub">
-                                    Qty: {item.quantity} · Price: ₹
+                                    Qty: {item.quantity} · Price: $
                                     {(item.product?.price || 0).toFixed(2)}
                                   </p>
                                 </div>

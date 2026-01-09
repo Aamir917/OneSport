@@ -1,28 +1,33 @@
-/* =========================
-   Admin Page Container
-========================= */
+/* ============================================
+   GLOBAL ADMIN PAGE STYLES
+============================================ */
 .admin-page {
   display: flex;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f4f7fb;
 }
 
-/* =========================
-   Sidebar
-========================= */
+/* ============================================
+   SIDEBAR
+============================================ */
 .admin-sidebar {
-  width: 220px;
-  background: #111;
+  width: 240px;
+  background: #0d1117;
   color: #fff;
-  padding: 20px;
-  flex-shrink: 0;
+  padding: 25px 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .admin-sidebar h2 {
-  margin-bottom: 20px;
-  font-size: 20px;
   text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .admin-sidebar ul {
@@ -31,146 +36,475 @@
 }
 
 .admin-sidebar li {
-  padding: 12px 10px;
+  padding: 14px 12px;
   cursor: pointer;
-  border-radius: 6px;
-  margin-bottom: 8px;
-  transition: 0.2s ease;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .admin-sidebar li:hover,
 .admin-sidebar li.active {
-  background: #444;
+  background: #30363d;
+  transform: translateX(4px);
 }
 
-/* =========================
-   Main Content
-========================= */
+/* Optional bullet/icon */
+.admin-sidebar li::before {
+  content: "•";
+  color: #61dafb;
+  font-size: 20px;
+}
+
+/* ============================================
+   MAIN CONTENT
+============================================ */
 .admin-content {
   flex: 1;
-  padding: 20px;
+  padding: 30px;
 }
 
-/* Section titles */
 .section h2 {
+  font-size: 26px;
+  font-weight: 600;
   margin-bottom: 20px;
-  color: #333;
+  color: #222;
 }
 
-/* =========================
-   Forms (Add Product)
-========================= */
-.section form input {
-  display: block;
+/* Generic section header (title + toolbar on the right) */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   ADD PRODUCT FORM
+============================================ */
+.section .admin-form {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+}
+
+.section .admin-form input {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 8px 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+.section .admin-form input:focus {
+  border-color: #111;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+.section .admin-form button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.section .admin-form button:hover {
+  background: #333;
+}
+
+/* Success message */
+.message {
+  font-weight: bold;
+  color: green;
+  margin-bottom: 12px;
+}
+
+/* ============================================
+   MANAGE PRODUCTS – TOOLBAR & CARDS
+============================================ */
+.manage-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.manage-toolbar input,
+.manage-toolbar select {
+  padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
 
-.section form button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  background: #111;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.2s ease;
+.manage-toolbar input {
+  min-width: 200px;
+}
+
+.product-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.admin-product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.admin-product-image {
+  width: 100%;
+  height: 170px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.admin-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.admin-product-info {
+  padding: 12px 14px;
+}
+
+.admin-product-info h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.admin-product-meta {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.admin-product-price {
   font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
-.section form button:hover {
-  background: #444;
+.admin-product-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
 }
 
-/* Message for form submission */
-.message {
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: green;
+.admin-product-actions button {
+  flex: 1;
 }
 
-/* =========================
-   Tables (Products & Users)
-========================= */
+/* ============================================
+   TABLE STYLING (Users & legacy tables)
+============================================ */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
-  background-color: #fff;
-  border-radius: 8px;
+  background: white;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-table th,
-table td {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  text-align: left;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-top: 10px;
 }
 
 table th {
-  background-color: #f0f0f0;
+  background: #f0f2f5;
+  padding: 14px;
+  text-align: left;
+  font-size: 15px;
   font-weight: 600;
+}
+
+table td {
+  padding: 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
 }
 
 table tr:last-child td {
   border-bottom: none;
 }
 
-/* Inputs inside table (stock update) */
+/* Table inputs (if any) */
 table input {
-  width: 60px;
-  padding: 5px;
+  padding: 5px 6px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  font-size: 14px;
+  width: 60px;
 }
 
-/* =========================
-   Buttons
-========================= */
+/* Buttons (edit/delete) */
 button {
   font-family: inherit;
 }
 
+.action-btn,
 .delete-btn {
-  padding: 6px 12px;
-  border: none;
+  padding: 7px 14px;
   border-radius: 6px;
-  background-color: #c0392b;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s ease;
+  border: none;
   font-size: 13px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* Edit Button */
+.action-btn {
+  background: #007bff;
+  color: white;
+}
+
+.action-btn:hover {
+  background: #005ec4;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #d93025;
+  color: white;
 }
 
 .delete-btn:hover {
-  background-color: #e74c3c;
+  background: #b82118;
 }
 
-/* =========================
-   Users Section
-========================= */
-.user-count {
-  font-weight: bold;
+/* ============================================
+   MODAL (Edit Product)
+============================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
+
+.modal-content h3 {
+  text-align: center;
   margin-bottom: 15px;
-  font-size: 16px;
 }
 
-/* Users table specific styling */
-.users-table th,
-.users-table td {
+.modal-content input {
+  width: 100%;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-/* =========================
-   Responsive Design
-========================= */
+.modal-content button {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.modal-content button:hover {
+  background: #333;
+}
+
+.modal-content .close {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+}
+
+.modal-content .close:hover {
+  color: black;
+}
+
+/* Modal animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   USERS SECTION
+============================================ */
+.user-count {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* ============================================
+   ALL ORDERS SECTION
+============================================ */
+
+/* Toolbar in Orders section */
+.orders-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.orders-toolbar select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Cards layout */
+.orders-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* Single order card */
+.order-card-admin {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Top row: thumbnail + text */
+.order-main-info {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Thumbnail wrapper */
+.order-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f4f6;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Thumbnail image – THIS FIXES THE HUGE BALL IMAGE */
+.order-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-text {
+  flex: 1;
+  font-size: 13px;
+  color: #374151;
+}
+
+.order-text p {
+  margin: 2px 0;
+}
+
+.order-id {
+  font-weight: 600;
+}
+
+/* Bottom row: status + items */
+.order-status-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.order-status span {
+  margin-right: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.order-status select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+/* Items preview pills */
+.order-items-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.order-item-name,
+.order-more {
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
 @media (max-width: 900px) {
   .admin-page {
     flex-direction: column;
@@ -178,40 +512,169 @@ button {
 
   .admin-sidebar {
     width: 100%;
+    height: auto;
     display: flex;
+    gap: 10px;
     justify-content: space-around;
-    margin-bottom: 15px;
   }
 
   .admin-sidebar ul {
     display: flex;
-    gap: 10px;
-  }
-
-  .admin-sidebar li {
-    margin-bottom: 0;
-    padding: 8px 10px;
-    flex: 1;
-    text-align: center;
+    gap: 12px;
   }
 
   .admin-content {
-    padding: 15px;
+    padding: 20px;
   }
 
-  table input {
-    width: 50px;
+  .order-main-info {
+    align-items: center;
   }
 }
 
 @media (max-width: 600px) {
-  .section form input {
-    padding: 6px 10px;
+  table th,
+  table td {
+    padding: 10px;
     font-size: 13px;
   }
 
-  .section form button {
-    padding: 8px 12px;
-    font-size: 13px;
+  .section .admin-form input {
+    font-size: 14px;
+  }
+
+  .section .admin-form button {
+    font-size: 14px;
+  }
+
+  .order-status-row {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
+/* STATUS TABS ABOVE ORDERS */
+.orders-status-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.orders-status-tab {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.orders-status-tab.active {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+
+/* STATUS PILL */
+.order-status-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.order-status-pill.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.order-status-pill.shipped {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.order-status-pill.delivered {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* VIEW DETAILS BUTTON */
+.order-details-toggle {
+  margin-top: 6px;
+  align-self: flex-start;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.order-details-toggle:hover {
+  background: #e5e7eb;
+}
+
+/* ORDER DETAILS EXPANDED AREA */
+.order-details {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.order-details h4 {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+/* Items list inside expanded details */
+.order-items-full {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-item-row-admin {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.order-item-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-item-info {
+  flex: 1;
+}
+
+.order-item-title {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.order-item-sub {
+  color: #6b7280;
+  font-size: 12px;
+}
+

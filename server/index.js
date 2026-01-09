@@ -12,6 +12,11 @@ const usersRouter = require('./routes/users');
 const adminRoutes = require('./routes/admin'); 
 const productsRouter = require('./routes/products'); // <-- New products route
 const cartRouter = require('./routes/cart');
+const profileRoutes = require('./routes/profile');
+const orderRoutes = require('./routes/orders');
+const wishlistRoutes = require("./routes/wishlist");
+const adminOrderRoutes = require("./routes/adminOrders");
+
 
 const app = express();
 
@@ -41,7 +46,10 @@ app.use('/api/users', usersRouter);    // User auth routes
 app.use('/api/admin', adminRoutes);    // Admin routes
 app.use('/api/products', productsRouter); // <-- Products API
 app.use('/api/cart', cartRouter);
-
+app.use('/api/profile', profileRoutes);
+app.use('/api/orders', orderRoutes);
+app.use("/api/wishlist", wishlistRoutes);
+app.use("/api/admin/orders", adminOrderRoutes);
 // =======================
 // MongoDB connection
 // =======================
